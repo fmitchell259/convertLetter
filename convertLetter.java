@@ -6,19 +6,27 @@
 
 */
 
-class convertLet {
-	
-	char userInput, outChar;
-	int charCheck, charChange;
-	
-	convertLetter(userIn) {
+class convertLetter {
+	public static void main(String args[])
+	throws java.io.IOException {
 		
-		userInput = userIn;
-	}
-	
-	charCheck = (int) userInput;
-	
-	if (charCheck > 65 && charCheck < 90){
+		char userInput, outChar;
+		int changeCount, charChange, charCheck,userBreak,changes = 0;
+		
+		do {
+			
+			System.out.println("Please enter letter to change?\n");
+			System.out.println("Press . to stop\n");
+			
+			userInput = (char) System.in.read();
+			userBreak = System.in.read();
+			charCheck = (int) userInput;
+			
+			if (userInput == '.'){
+				break;
+			}
+			
+			if (charCheck > 65 && charCheck < 90){
 				
 				charChange = userInput + 32;
 				outChar = (char) charChange;
@@ -26,7 +34,7 @@ class convertLet {
 				System.out.println("Changed to: " + outChar);
 				System.out.println("");
 				System.out.println("========================");
-				return outChar;
+				continue;
 			}
 			
 			else if (charCheck > 97 && charCheck < 122 ) {
@@ -37,37 +45,14 @@ class convertLet {
 				System.out.println("Change to: " + outChar);
 				System.out.println("");
 				System.out.println("========================");
-				return outChar;
+				continue;
 			}
 			
 			else {
 				System.out.println("=================\n");
 				System.out.println("That is not a valid character to change.\n\nPlease try again.\n");
 				System.out.println("=================\n");
-				return false;
-			}
-	
-class convertLetter {
-	
-	public static void main(String args[])
-	throws java.io.IOException {
-		
-		char userInput, outChar;
-		int  userBreak, changes = 0;
-		
-		convertLet cVerter = new convertLet;
-		
-		do {
-			
-			System.out.println("Please enter letter to change?\n");
-			System.out.println("Press . to stop\n");
-			
-			userInput = (char) System.in.read();
-			userBreak = System.in.read();
-			convertLet(userInput);
-			
-			if (userInput == '.'){
-				break;
+				continue;
 			}
 					 
 		}while(userInput != '.');
