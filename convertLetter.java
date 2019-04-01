@@ -11,7 +11,7 @@ class convertLet {
 	char userInput, outChar;
 	int charCheck, charChange;
 	
-	convertLetter(userIn) {
+	convertLet(userIn) {
 		
 		userInput = userIn;
 	}
